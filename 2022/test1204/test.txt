@@ -1,0 +1,5 @@
+chi 1 huo 3 guo 1 chi 123
+3
+ch
+huo
+guo
