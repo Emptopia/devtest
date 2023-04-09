@@ -22,7 +22,7 @@ void add(int x, int k)
 //区间查询（求和） 
 int sum(int x)
 {
-	int sum =0;
+	int ans =0;
 	while(x!=0)
 	{
 		//所有前相邻节点的和 
@@ -30,6 +30,7 @@ int sum(int x)
 		//前相邻节点(不是子节点) 
 		x-=lowbit(x);
 	}
+	return ans;
 }
 
 int main()

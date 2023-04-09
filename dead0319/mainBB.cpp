@@ -15,15 +15,16 @@ int main()
 			if(i+j>len)continue;
 			se.insert(s.substr(i,j));
 		}
-		
-		
 	}
+	
 	set<string>::iterator it = se.begin();
-	for(int i=1;i<k;i++)it++;
+	for(int i=0;i<k-1;i++)
+	{
+		it++;
+	}
 	cout << *it << endl;
-	
-	
-	
 	
 	return 0;
 }
+
+ 
