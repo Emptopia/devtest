@@ -1,14 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 const int maxn = 5e5+10;
-int n,m,tree[maxn]; 
+int n,m,tree[maxn];
 
 int lowbit(int k)
 {
 	return k & -k;
-}
+ } 
 
-void add(int k,int val)
+void add(int k, int val)
 {
 	while(k<=n)
 	{
@@ -19,14 +19,15 @@ void add(int k,int val)
 
 int search(int k)
 {
-	int res=0;
+	int sum =0;
 	while(k>0)
 	{
-		res+=tree[k];
+		sum+=tree[k];
 		k-=lowbit(k);
-	}	
-	return res;
-} 
+	}
+	return sum;
+}
+
 
 
 int main()
@@ -34,21 +35,23 @@ int main()
 	cin >> n >> m;
 	for(int i=1;i<=n;i++)
 	{
-		int k;
-		cin >> k;
-		add(i,k);
+		int val;
+		cin >> val;
+		add(i,val);
 	}
-	
 	for(int i=1;i<=m;i++)
 	{
 		int a,b,c;
 		cin >> a >> b >> c;
-		if(a==1)add(b,c);
+		if(a==1)
+		{
+			add(b,c);
+		}
 		else
 		{
-			int res = search(c)-search(b-1);
-			cout << res << endl;
+			cout << search(c)-search(b-1) << endl;
 		}
+		
 	}
 
 	

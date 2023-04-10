@@ -5,9 +5,9 @@ int n,m,input[maxn],tree[maxn];
 
 int lowbit(int k)
 {
-	return k&-k;
+	return k & -k;
 }
-//区间修改 
+
 void add(int k,int val)
 {
 	while(k<=n)
@@ -17,7 +17,6 @@ void add(int k,int val)
 	}
 }
 
-//单点查询 
 int search(int k)
 {
 	int res=0;
@@ -29,7 +28,6 @@ int search(int k)
 	return res;
 }
 
-
 int main()
 {
 	cin >> n >> m;
@@ -37,7 +35,6 @@ int main()
 	{
 		cin >> input[i];
 	}
-	
 	for(int i=1;i<=m;i++)
 	{
 		int a,b,c,d;
@@ -51,10 +48,9 @@ int main()
 		else
 		{
 			cin >> b;
-			cout << input[b]+search(b) << endl;
+			cout << input[b] + search(b) << endl;
 		}
 	}
-	
 	
 	
 	return 0;
